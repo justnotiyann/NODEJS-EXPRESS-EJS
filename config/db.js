@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const db = new Sequelize(process.env.DATABASE, process.env.USER_DATA, process.env.PASSWORD, {
   host: process.env.HOST,
-  dialect: process.env.DIALECT /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */,
+  dialect: process.env.DIALECT,
 });
 
 const result = db.authenticate();
