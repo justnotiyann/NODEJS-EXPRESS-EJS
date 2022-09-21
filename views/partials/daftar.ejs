@@ -1,11 +1,19 @@
 <div class="container" id="container_form_daftar">
-    <form action="/daftar">
-        <label for="name">Input Name</label>
-        <input type="text" name="name" id="name" class="form-control">
-        <label for="email">Input Email</label>
-        <input type="email" name="email" id="email" class="form-control">
-        <label for="password">Input Password</label>
-        <input type="password" name="password" id="password" class="form-control">
-        <button class="btn">Submit !</button>
-    </form>
+    <div class="row ">
+        <div class="col-8 offset-2 ">
+            <form action="/daftar" method="POST">
+                <div class="alert alert-<%= color %>" role="alert">
+                    <%= msg %>
+                </div>
+                <label for="name">Input Name</label>
+                <input type="text" name="name" placeholder="Input email..." id="name" class="form-control">
+                <label for="email">Input Email</label>
+                <input type="email" name="email" placeholder="Input email..." id="email" class="form-control">
+                <label for="password">Input Password</label>
+                <input type="password" name="password" placeholder="Input password..." id="password"
+                    class="form-control">
+                <button class="btn">Submit !</button>
+            </form>
+        </div>
+    </div>
 </div>

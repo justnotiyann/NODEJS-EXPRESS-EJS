@@ -3,7 +3,38 @@
 @import "./partials/reset";
 @import "./partials/variabels";
 
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      list-style-type: none;
+      margin-right: 2rem;
+      a {
+        color: rgb(120, 101, 53);
+        transition: all 0.5s ease-in-out;
+        &:hover {
+          color: goldenrod;
+        }
+      }
+    }
+  }
+}
+
 #container_form_daftar {
-  margin-top: 10rem;
-  padding: 10rem;
+  margin-top: 15em;
+  button {
+    background-color: rgb(47, 128, 47);
+    color: white;
+    margin-top: 1rem;
+    width: 50%;
+  }
+  label {
+    margin-bottom: 0.5rem;
+  }
 }

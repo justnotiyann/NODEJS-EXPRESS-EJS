@@ -1,11 +1,27 @@
 const Users = require("../models/Users");
 const argon2 = require("argon2");
+const { validationResult } = require("express-validator");
+// const renderFormDaftar = require("../middleware/RenderComponent");
+
+const renderFormDaftar = (color, msg, res) => {
+  res.render("partials/daftar", {
+    layout: "./layout/main",
+    title: "Halaman Utama",
+    color: color,
+    msg: msg,
+  });
+};
 
 const addUser = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    renderFormDaftar("danger", "Input Email harus berupa email", res);
+  }
   const hash = await argon2.hash(req.body.password);
   const result = await Users.create({ ...req.body, password: hash });
-  if (!result) res.json({ msg: "Terjadi kesalahan" });
-  res.json({ msg: "Berhasil membuat data", result: [result] });
+
+  if (!result) renderFormDaftar("danger", "Gagal Mendaftar", res);
+  renderFormDaftar("success", "Berhasil mendaftar", res);
 };
 
 const getAllUsers = async (req, res) => {
