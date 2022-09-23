@@ -7,4 +7,11 @@ const renderFormDaftar = (color, msg, res) => {
   });
 };
 
-module.exports = { renderFormDaftar };
+const renderMyTodo = (res) => {
+  res.render("partials/myTodo", {
+    layout: "./layout/main",
+    title: "Halaman Utama",
+  });
+};
+
+module.exports = { renderFormDaftar, renderMyTodo };

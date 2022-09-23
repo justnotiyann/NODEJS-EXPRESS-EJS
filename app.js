@@ -22,7 +22,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 var indexRouter = require("./routes/index");
 const daftarRouter = require("./routes/daftar");
+const myTodoRoutes = require("./routes/mytodo");
 app.use("/", indexRouter);
+app.use("/mytodo", myTodoRoutes);
 app.use("/daftar", daftarRouter);
 
 module.exports = app;
