@@ -42,5 +42,6 @@ nav {
     color: white;
     font-weight: bold;
     transition: 0.5s; }
-    #container_mytodo .btn:hover {
-      background-color: #215b21; }
+  #container_mytodo #table_todo {
+    height: 20em;
+    overflow: auto; }

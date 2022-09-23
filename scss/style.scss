@@ -52,8 +52,9 @@ nav {
     color: white;
     font-weight: bold;
     transition: 0.5s;
-    &:hover {
-      background-color: darken(10);
-    }
+  }
+  #table_todo {
+    height: 20em;
+    overflow: auto;
   }
 }

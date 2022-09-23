@@ -7,13 +7,13 @@
         </div>
         <div class="col-6 add-todo">
             <h1>Masukkan Todo Anda Brother</h1>
-            <form action="/addtodo" method="POST">
+            <form action="/mytodo" method="POST">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col">
                         <label for="todo" class="form-label">Masukkan Todo</label>
                         <input type="text" name="todo" class="form-control" placeholder="Masukkan Todo !">
                     </div>
-                    <div class="col-6">
+                    <div class="col">
                         <label for="deadline" class="form-label">Masukkan Deadline</label>
                         <input type="date" name="deadline" class="form-control">
                     </div>
@@ -23,8 +23,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 mt-5">
-            <table class="table ">
+        <div class="col-12 mt-5" id="table_todo">
+            <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -35,26 +35,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% result.forEach(datas=> { %>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>
-                                <%= datas.todo %>
-                            </td>
-                            <td>
-                                <%= datas.createdAt %>
-                            </td>
-                            <td>
-                                <%= datas.deadline %>
-                            </td>
-                            <td>
-                                <a href="/mytodo/delete"><button class="btn btn-success">Todo Sudah Selesai
-                                        !</button></a>
-                                <a href="/mytodo/<%= datas.id %> "><button class="btn btn-warning">Edit Todo
-                                        !</button></a>
-                            </td>
-                        </tr>
-                        <% }) %>
+                    <% if (jika>0) { %>
+                        <div class="alert alert-<%= color %> " role="alert">
+                            <%= msg %>
+                        </div>
+                        <% } %>
+                            <% result.forEach(datas=> { %>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <%= datas.todo %>
+                                    </td>
+                                    <td>
+                                        <%= datas.createdAt %>
+                                    </td>
+                                    <td>
+                                        <%= datas.deadline %>
+                                    </td>
+                                    <td>
+                                        <a href="/mytodo/done/<%=datas.id%>"><button
+                                                onclick="confirm('Yakin deck sudah selesai ?!')"
+                                                class="btn btn-success">Todo Sudah
+                                                Selesai
+                                                !</button></a>
+                                        <a href="/mytodo/<%= datas.id %>"><button class="btn btn-warning">Edit Todo
+                                                !</button></a>
+                                    </td>
+                                </tr>
+                                <% }) %>
                 </tbody>
             </table>
         </div>
