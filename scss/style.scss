@@ -5,28 +5,28 @@
 
 $green: rgb(47, 128, 47);
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    li {
-      list-style-type: none;
-      margin-right: 2rem;
-      a {
-        color: rgb(120, 101, 53);
-        transition: all 0.5s ease-in-out;
-        &:hover {
-          color: goldenrod;
-        }
-      }
-    }
-  }
-}
+// nav {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 1rem;
+//   ul {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     li {
+//       list-style-type: none;
+//       margin-right: 2rem;
+//       a {
+//         color: rgb(120, 101, 53);
+//         transition: all 0.5s ease-in-out;
+//         &:hover {
+//           color: goldenrod;
+//         }
+//       }
+//     }
+//   }
+// }
 
 #container_form_daftar {
   margin-top: 15em;
