@@ -36,11 +36,11 @@ nav {
 
 #container_mytodo {
   margin-top: 8em; }
+  #container_mytodo .add-todo .btn {
+    margin-top: 1em; }
   #container_mytodo .btn {
-    background-color: #2f802f;
     color: white;
     font-weight: bold;
-    margin-top: 1em;
     transition: 0.5s; }
     #container_mytodo .btn:hover {
       background-color: #215b21; }

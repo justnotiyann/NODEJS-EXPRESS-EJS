@@ -43,14 +43,17 @@ nav {
 
 #container_mytodo {
   margin-top: 8em;
+  .add-todo {
+    .btn {
+      margin-top: 1em;
+    }
+  }
   .btn {
-    background-color: $green;
     color: white;
     font-weight: bold;
-    margin-top: 1em;
     transition: 0.5s;
     &:hover {
-      background-color: darken($green, 10);
+      background-color: darken(10);
     }
   }
 }

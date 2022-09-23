@@ -1,9 +1,11 @@
 const router = require("express").Router();
-const components = require("../components/components");
+const Todo = require("../controllers/Todo");
 
 // localhost:3000/mytodo
-router.get("/", async (req, res) => {
-  components.renderMyTodo(res);
-});
+router.get("/", Todo.getTodo);
+
+router.post("/", Todo.addTodo);
+router.get("/detail", Todo.getTodoJSON);
+router.get("/delete/:id", Todo.deleteTodo);
 
 module.exports = router;

@@ -3,14 +3,60 @@
         <div class="col-6">
             <h1>My Todo List Brother</h1>
             <p class="text-muted">Ini Lorem</p>
+            <a href="/">Kembali ke halaman utama</a>
         </div>
-        <div class="col-6">
+        <div class="col-6 add-todo">
             <h1>Masukkan Todo Anda Brother</h1>
-            <form action="/mytodo" method="POST">
-                <label for="add" class="form-label">Masukkan Todo</label>
-                <input type="text" class="form-control" placeholder="Masukkan Todo !">
-                <button class="btn">Buat Todo !!!</button>
+            <form action="/addtodo" method="POST">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="todo" class="form-label">Masukkan Todo</label>
+                        <input type="text" name="todo" class="form-control" placeholder="Masukkan Todo !">
+                    </div>
+                    <div class="col-6">
+                        <label for="deadline" class="form-label">Masukkan Deadline</label>
+                        <input type="date" name="deadline" class="form-control">
+                    </div>
+                </div>
+                <button class="btn btn-success w-100">Buat Todo !!!</button>
             </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-5">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Todo</th>
+                        <th scope="col">Dibuat Pada</th>
+                        <th scope="col">Deadline</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% result.forEach(datas=> { %>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>
+                                <%= datas.todo %>
+                            </td>
+                            <td>
+                                <%= datas.createdAt %>
+                            </td>
+                            <td>
+                                <%= datas.deadline %>
+                            </td>
+                            <td>
+                                <a href="/mytodo/delete"><button class="btn btn-success">Todo Sudah Selesai
+                                        !</button></a>
+                                <a href="/mytodo/<%= datas.id %> "><button class="btn btn-warning">Edit Todo
+                                        !</button></a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
