@@ -23,8 +23,10 @@ app.use(express.static(path.join(__dirname, "public")));
 var indexRouter = require("./routes/index");
 const daftarRouter = require("./routes/daftar");
 const myTodoRoutes = require("./routes/mytodo");
+const loginRoutes = require("./routes/login");
 app.use("/PROJECT-TODO-LIST", indexRouter);
 app.use("/PROJECT-TODO-LIST/mytodo", myTodoRoutes);
 app.use("/PROJECT-TODO-LIST/daftar", daftarRouter);
+app.use("/PROJECT-TODO-LIST/login", loginRoutes);
 
 module.exports = app;

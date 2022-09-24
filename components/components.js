@@ -1,3 +1,10 @@
+const renderLogin = (res) => {
+  res.render("partials/login", {
+    layout: "./layout/main",
+    title: "Halaman Login",
+  });
+};
+
 const renderFormDaftar = (color, msg, res) => {
   res.render("partials/daftar", {
     layout: "./layout/main",
@@ -27,4 +34,4 @@ const renderAlert = (msg, color, res) => {
   });
 };
 
-module.exports = { renderFormDaftar, renderMyTodo, renderAlert };
+module.exports = { renderFormDaftar, renderMyTodo, renderAlert, renderLogin };
